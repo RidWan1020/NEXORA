@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXORA — Premium 3D Digital Agency & Studio</title>
+  <meta name="description"
+    content="NEXORA is a boutique creative technology studio crafting bespoke 3D digital experiences, flagship websites, and conversion-focused digital systems for ambitious brands.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="custom-cursor-active">
+  <!-- Custom Cursor & Follower -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Background Ambient Noise & Glow Orbs -->
+  <div class="ambient-glow orb-1"></div>
+  <div class="ambient-glow orb-2"></div>
+  <div class="ambient-glow orb-3"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- Floating Sticky Navigation -->
+  <header class="header-nav" id="mainHeader">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="NEXORA Home">
+        <img src="assets/images/nexora-logo.jpg" alt="NEXORA Logo" class="brand-logo-img">
+      </a>
+
+      <div class="nav-badge desktop-only">
+        <span class="live-pulse"></span>
+        <span class="badge-text">STUDIO Q3/Q4 AVAILABILITY</span>
+      </div>
+
+      <nav class="nav-links desktop-only" aria-label="Main Navigation">
+        <a href="#work" class="nav-link"><span class="link-idx">01</span>WORK</a>
+        <a href="#services" class="nav-link"><span class="link-idx">02</span>SERVICES</a>
+        <a href="#industries" class="nav-link"><span class="link-idx">03</span>EXPERTISE</a>
+        <a href="#process" class="nav-link"><span class="link-idx">04</span>PROCESS</a>
+        <a href="#about" class="nav-link"><span class="link-idx">05</span>ABOUT</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Admin Portal Trigger -->
+        <button class="mode-switch-btn admin-access-btn" id="openAdminBtn" title="Admin Portal">
+          <span class="mode-text">ADMIN</span>
+        </button>
+
+        <a href="#contact" class="btn btn-nav magnetic-target">
+          <span>START A PROJECT</span>
+          <svg class="btn-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.6"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <!-- Mobile Burger Trigger -->
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="burger-line line-1"></span>
+          <span class="burger-line line-2"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="drawer-inner">
+        <div class="drawer-status">
+          <span class="live-pulse"></span>
+          <span>CURRENTLY ACCEPTING NEW CLIENTS</span>
+        </div>
+        <nav class="drawer-nav">
+          <a href="#hero" class="drawer-link"><span class="num">00</span> HOME</a>
+          <a href="#work" class="drawer-link"><span class="num">01</span> SELECTED WORK</a>
+          <a href="#services" class="drawer-link"><span class="num">02</span> SERVICES</a>
+          <a href="#industries" class="drawer-link"><span class="num">03</span> INDUSTRIES</a>
+          <a href="#process" class="drawer-link"><span class="num">04</span> OUR PROCESS</a>
+          <a href="#about" class="drawer-link"><span class="num">05</span> ABOUT STUDIO</a>
+          <a href="#contact" class="drawer-link highlight"><span class="num">06</span> START A PROJECT →</a>
+        </nav>
+        <div class="drawer-footer">
+          <div class="drawer-mode-box">
+            <button class="btn btn-outline btn-full" id="drawerOpenAdminBtn" style="width: 100%; margin-bottom: 1rem;">
+              <span>ADMIN PORTAL</span>
+            </button>
+          </div>
+          <p class="drawer-tagline">WE BUILD WEBSITES PEOPLE REMEMBER.</p>
+          <div class="drawer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://behance.net" target="_blank" rel="noopener">Behance</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="section hero-section" id="hero">
+      <!-- 3D Three.js Interactive Canvas Container -->
+      <div class="hero-canvas-wrap" id="hero3dContainer">
+        <canvas id="heroCanvas"></canvas>
+        <div class="canvas-vignette"></div>
+      </div>
+
+      <div class="hero-content container">
+        <div class="hero-tag-pill reveal-fade" style="--delay: 0.1s">
+          <span class="pill-dot"></span>
+          <span class="pill-text">DIGITAL EXPERIENCES / WEB DESIGN / DEVELOPMENT</span>
+        </div>
+
+        <h1 class="hero-title reveal-title" aria-label="We Build Websites People Remember">
+          <span class="line"><span class="word">WE</span> <span class="word">BUILD</span></span>
+          <span class="line"><span class="word">WEBSITES</span></span>
+          <span class="line"><span class="word">PEOPLE</span></span>
+          <span class="line"><span class="word highlight-remember">REMEMBER<span
+                class="lime-period">.</span></span></span>
+        </h1>
+
+        <p class="hero-lead reveal-fade" style="--delay: 0.4s">
+          Premium websites designed to make local businesses look unforgettable, build trust and turn visitors into
+          customers.
+        </p>
+
+        <div class="hero-cta-group reveal-fade" style="--delay: 0.5s">
+          <a href="#work" class="btn btn-primary magnetic-target" id="heroBtnWork">
+            <span>VIEW OUR WORK</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M7 1V13M7 13L1 7M7 13L13 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+
+          <a href="#contact" class="btn btn-secondary magnetic-target" id="heroBtnContact">
+            <span>START A PROJECT</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero-meta-strip reveal-fade" style="--delay: 0.6s">
+          <div class="meta-item">
+            <span class="label">LOCATION</span>
+            <span class="val">GLOBAL / REMOTE</span>
+          </div>
+          <div class="meta-item">
+            <span class="label">AESTHETIC</span>
+            <span class="val">EDITORIAL & 3D INTERACTIVE</span>
+          </div>
+          <div class="meta-item">
+            <span class="label">CORE FOCUS</span>
+            <span class="val">HOSPITALITY / BEAUTY / COMMERCE</span>
+          </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+          <a href="#intro" class="scroll-link" aria-label="Scroll to exploration section">
+            <span class="scroll-mouse">
+              <span class="wheel"></span>
+            </span>
+            <span class="scroll-text">SCROLL TO EXPLORE <span class="arrow-down">↓</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO STATEMENT & ANIMATED METRICS -->
+    <section class="section intro-section" id="intro">
+      <div class="container">
+        <div class="section-label reveal-on-scroll">
+          <span class="label-idx">01</span>
+          <span class="label-text">WHAT WE DO</span>
+        </div>
+
+        <div class="intro-grid">
+          <div class="intro-headline-wrap reveal-on-scroll">
+            <h2 class="editorial-headline">
+              WE TURN<br>
+              BUSINESSES<br>
+              INTO DIGITAL<br>
+              <span class="gradient-text">EXPERIENCES.</span>
+            </h2>
+          </div>
+
+          <div class="intro-body-wrap reveal-on-scroll">
+            <p class="intro-paragraph">
+              We design and build modern websites for businesses that want to look premium, communicate clearly and
+              convert more visitors into customers.
+            </p>
+            <p class="intro-subtext">
+              In a crowded market, good isn't enough. We eliminate boring boilerplate templates and engineer digital
+              destinations engineered with cinematic precision, silky 60fps micro-interactions, and frictionless
+              customer booking flows.
+            </p>
+            <div class="intro-award-pill">
+              <span class="star-icon">✦</span>
+              <span>Tailored for Hospitality, Salons, Hotels, Barbershops & Flagship Dining</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Counter Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card reveal-card" data-counter-card>
+            <div class="metric-top">
+              <span class="metric-num" data-target="5" data-suffix="+">0</span>
+              <span class="metric-badge">ACTIVE</span>
+            </div>
+            <h3 class="metric-title">Featured Concepts</h3>
+            <p class="metric-desc">Flagship live client demos deployed with tailored aesthetics and booking workflows.
+            </p>
+          </div>
+
+          <div class="metric-card reveal-card" data-counter-card>
+            <div class="metric-top">
+              <span class="metric-num" data-target="4" data-suffix="">0</span>
+              <span class="metric-badge">PRIMARY</span>
+            </div>
+            <h3 class="metric-title">Business Industries</h3>
+            <p class="metric-desc">Mastered niches across Grooming, Luxury Beauty, Boutique Hotels, and Dining.</p>
+          </div>
+
+          <div class="metric-card reveal-card" data-counter-card>
+            <div class="metric-top">
+              <span class="metric-num" data-target="100" data-suffix="%">0</span>
+              <span class="metric-badge">PERFECTION</span>
+            </div>
+            <h3 class="metric-title">Responsive & Fluid</h3>
+            <p class="metric-desc">Zero awkward breakpoints. Handcrafted fluid scaling across mobile, tablets, and
+              ultrawides.</p>
+          </div>
+
+          <div class="metric-card reveal-card" data-counter-card>
+            <div class="metric-top">
+              <span class="metric-num" data-target="24" data-suffix="/7">0</span>
+              <span class="metric-badge">ALWAYS ON</span>
+            </div>
+            <h3 class="metric-title">Digital Presence</h3>
+            <p class="metric-desc">High availability architectures delivering lightning-fast booking and order
+              conversions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE BUILD / SERVICES SECTION -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-label">
+            <span class="label-idx">02</span>
+            <span class="label-text">OUR CAPABILITIES</span>
+          </div>
+          <h2 class="section-title">WHAT WE BUILD<span class="lime-period">.</span></h2>
+          <p class="section-subtitle">Six specialized digital disciplines tuned specifically to elevate local commerce
+            and hospitality.</p>
+        </div>
+
+        <div class="services-interactive-list" id="servicesList">
+          <!-- Service Item 01 -->
+          <div class="service-row active" data-service-index="1" data-service-filter="web-design">
+            <div class="service-left">
+              <span class="service-num">01</span>
+              <h3 class="service-name">WEB DESIGN</h3>
+            </div>
+            <div class="service-center">
+              <p class="service-desc">Conversion-focused interfaces designed around your brand, audience and business
+                goals.</p>
+              <div class="service-tags">
+                <span class="tag">UI/UX Strategy</span>
+                <span class="tag">Design Systems</span>
+                <span class="tag">Wireframing & Prototyping</span>
+              </div>
+            </div>
+            <div class="service-right">
+              <div class="service-visual-badge">
+                <canvas class="service-micro-canvas" data-shape="torus"></canvas>
+              </div>
+              <span class="service-arrow" title="Filter Work by Web Design">↗</span>
+            </div>
+          </div>
+
+          <!-- Service Item 02 -->
+          <div class="service-row" data-service-index="2" data-service-filter="web-development">
+            <div class="service-left">
+              <span class="service-num">02</span>
+              <h3 class="service-name">WEB DEVELOPMENT</h3>
+            </div>
+            <div class="service-center">
+              <p class="service-desc">Lightning-fast, search-engine-optimized code built for reliability, accessibility,
+                and high conversion.</p>
+              <div class="service-tags">
+                <span class="tag">Semantic HTML5 / Vanilla JS</span>
+                <span class="tag">WebGL / 3D Graphics</span>
+                <span class="tag">Sub-second Load Times</span>
+              </div>
+            </div>
+            <div class="service-right">
+              <div class="service-visual-badge">
+                <canvas class="service-micro-canvas" data-shape="icosahedron"></canvas>
+              </div>
+              <span class="service-arrow" title="Filter Work by Web Development">↗</span>
+            </div>
+          </div>
+
+          <!-- Service Item 03 -->
+          <div class="service-row" data-service-index="3" data-service-filter="booking-experiences">
+            <div class="service-left">
+              <span class="service-num">03</span>
+              <h3 class="service-name">BOOKING EXPERIENCES</h3>
+            </div>
+            <div class="service-center">
+              <p class="service-desc">Frictionless calendar scheduling, service selection, stylist picking, and instant
+                booking confirmation flows.</p>
+              <div class="service-tags">
+                <span class="tag">Custom Booking Flows</span>
+                <span class="tag">Automated Sync</span>
+                <span class="tag">Zero Drop-off UX</span>
+              </div>
+            </div>
+            <div class="service-right">
+              <div class="service-visual-badge">
+                <canvas class="service-micro-canvas" data-shape="octahedron"></canvas>
+              </div>
+              <span class="service-arrow" title="Filter Work by Booking Experiences">↗</span>
+            </div>
+          </div>
+
+          <!-- Service Item 04 -->
+          <div class="service-row" data-service-index="4" data-service-filter="restaurant-ordering">
+            <div class="service-left">
+              <span class="service-num">04</span>
+              <h3 class="service-name">RESTAURANT ORDERING</h3>
+            </div>
+            <div class="service-center">
+              <p class="service-desc">Sensory digital menus, custom modifiers, visual cart drawers, and table
+                reservation systems that drive sales.</p>
+              <div class="service-tags">
+                <span class="tag">Dynamic Menus</span>
+                <span class="tag">Live Cart Drawers</span>
+                <span class="tag">Direct Commission-Free Orders</span>
+              </div>
+            </div>
+            <div class="service-right">
+              <div class="service-visual-badge">
+                <canvas class="service-micro-canvas" data-shape="cylinder"></canvas>
+              </div>
+              <span class="service-arrow" title="Filter Work by Restaurant Ordering">↗</span>
+            </div>
+          </div>
+
+          <!-- Service Item 05 -->
+          <div class="service-row" data-service-index="5" data-service-filter="brand-digital-experience">
+            <div class="service-left">
+              <span class="service-num">05</span>
+              <h3 class="service-name">BRAND + DIGITAL EXPERIENCE</h3>
+            </div>
+            <div class="service-center">
+              <p class="service-desc">Complete visual identities, bespoke art direction, custom micro-interactions, and
+                high-impact digital storytelling.</p>
+              <div class="service-tags">
+                <span class="tag">Art Direction</span>
+                <span class="tag">Motion Design</span>
+                <span class="tag">Sensory Typography</span>
+              </div>
+            </div>
+            <div class="service-right">
+              <div class="service-visual-badge">
+                <canvas class="service-micro-canvas" data-shape="dodecahedron"></canvas>
+              </div>
+              <span class="service-arrow" title="Filter Work by Brand + Digital">↗</span>
+            </div>
+          </div>
+
+          <!-- Service Item 06 -->
+          <div class="service-row" data-service-index="6" data-service-filter="responsive-mobile-design">
+            <div class="service-left">
+              <span class="service-num">06</span>
+              <h3 class="service-name">RESPONSIVE MOBILE DESIGN</h3>
+            </div>
+            <div class="service-center">
+              <p class="service-desc">Thumb-driven interfaces crafted for handheld devices where over 70% of restaurant
+                and salon decisions happen.</p>
+              <div class="service-tags">
+                <span class="tag">Touch Ergonomics</span>
+                <span class="tag">Mobile-First Speeds</span>
+                <span class="tag">Native App Sensation</span>
+              </div>
+            </div>
+            <div class="service-right">
+              <div class="service-visual-badge">
+                <canvas class="service-micro-canvas" data-shape="ring"></canvas>
+              </div>
+              <span class="service-arrow" title="Filter Work by Mobile Design">↗</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK / SELECTED WORK -->
+    <section class="section work-section" id="work">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-label">
+            <span class="label-idx">03</span>
+            <span class="label-text">FEATURED PORTFOLIO</span>
+          </div>
+          <div class="header-split">
+            <h2 class="section-title">SELECTED WORK<span class="lime-period">.</span></h2>
+            <div class="header-actions-wrap">
+              <p class="section-subtitle">
+                Explore our live digital website experiences filtered by specialized services, or manually add your own
+                website to the showcase.
+              </p>
+              <button class="btn btn-primary btn-add-showcase magnetic-target" id="openAddProjectModal">
+                <span class="plus-icon">+</span>
+                <span>ADD NEW WEBSITE</span>
+              </button>
+            </div>
+          </div>
+
+
+
+          <!-- Services Filter Option Bar -->
+          <div class="portfolio-controls-bar">
+            <div class="filter-label-strip">
+              <span class="filter-title">FILTER BY SERVICE:</span>
+            </div>
+            <div class="portfolio-filter-bar" id="portfolioFilterBar">
+              <button class="filter-pill active" data-filter="all">
+                <span class="filter-name">ALL WORK</span>
+                <span class="filter-count" id="count-all">0</span>
+              </button>
+              <button class="filter-pill" data-filter="web-design">
+                <span class="filter-name">WEB DESIGN</span>
+                <span class="filter-count" id="count-web-design">0</span>
+              </button>
+              <button class="filter-pill" data-filter="web-development">
+                <span class="filter-name">WEB DEVELOPMENT</span>
+                <span class="filter-count" id="count-web-development">0</span>
+              </button>
+              <button class="filter-pill" data-filter="booking-experiences">
+                <span class="filter-name">BOOKING EXPERIENCES</span>
+                <span class="filter-count" id="count-booking-experiences">0</span>
+              </button>
+              <button class="filter-pill" data-filter="restaurant-ordering">
+                <span class="filter-name">RESTAURANT ORDERING</span>
+                <span class="filter-count" id="count-restaurant-ordering">0</span>
+              </button>
+              <button class="filter-pill" data-filter="brand-digital-experience">
+                <span class="filter-name">BRAND & DIGITAL</span>
+                <span class="filter-count" id="count-brand-digital-experience">0</span>
+              </button>
+              <button class="filter-pill" data-filter="responsive-mobile-design">
+                <span class="filter-name">MOBILE DESIGN</span>
+                <span class="filter-count" id="count-responsive-mobile-design">0</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-stack" id="projectsContainer">
+          <!-- PROJECT 01: LUXECUT -->
+          <article class="project-showcase" id="project-luxecut" data-project="luxecut"
+            data-services="web-design booking-experiences responsive-mobile-design">
+            <div class="project-inner">
+              <div class="project-info">
+                <div class="project-tag-wrap">
+                  <span class="project-index">01 / 05</span>
+                  <span class="project-category">BARBERSHOP / BOOKING</span>
+                </div>
+
+                <h3 class="project-name">LUXECUT</h3>
+                <p class="project-tagline">Premium Men's Grooming Studio</p>
+
+                <p class="project-description">
+                  A high-end sanctuary aesthetic blending dark walnut, brushed brass, and architectural minimalism.
+                  Equipped with an interactive multi-barber scheduler, service customizer, and high-conversion client
+                  acquisition funnel.
+                </p>
+
+                <div class="project-deliverables">
+                  <span class="deliv-item">Web Design</span>
+                  <span class="deliv-item">Booking Experience</span>
+                  <span class="deliv-item">Responsive Development</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://luxecut.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary magnetic-target" id="btnLiveLuxecut">
+                    <span>VIEW LIVE WEBSITE</span>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <button class="btn btn-outline preview-modal-trigger" data-target-project="luxecut"
+                    data-url="https://luxecut.vercel.app/">
+                    <span>EXPAND PREVIEW</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-viewport-wrapper">
+                <div class="browser-window tilt-target">
+                  <div class="browser-chrome">
+                    <div class="window-dots">
+                      <span class="dot red"></span>
+                      <span class="dot yellow"></span>
+                      <span class="dot green"></span>
+                    </div>
+                    <div class="browser-address-bar">
+                      <span class="browser-url">https://luxecut.vercel.app/</span>
+                    </div>
+                    <div class="browser-actions">
+                      <span class="action-icon">⟳</span>
+                    </div>
+                  </div>
+                  <div class="browser-body">
+                    <img src="assets/images/luxecut.jpg" alt="LUXECUT Premium Men's Grooming Studio Website Preview"
+                      class="project-image" loading="lazy">
+                    <div class="browser-hover-overlay">
+                      <a href="https://luxecut.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="overlay-cta">
+                        <span>LAUNCH DEMO ↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 02: AURA -->
+          <article class="project-showcase" id="project-aura" data-project="aura"
+            data-services="web-design booking-experiences brand-digital-experience">
+            <div class="project-inner reverse">
+              <div class="project-info">
+                <div class="project-tag-wrap">
+                  <span class="project-index">02 / 05</span>
+                  <span class="project-category">SALON / BEAUTY</span>
+                </div>
+
+                <h3 class="project-name">AURA</h3>
+                <p class="project-tagline">Quiet Luxury Beauty Studio</p>
+
+                <p class="project-description">
+                  An editorial, calming sanctuary designed with warm cashmere palettes, organic curves, and seamless
+                  treatment discovery. Engineered to convert high-ticket wellness clientele with instant appointment
+                  booking.
+                </p>
+
+                <div class="project-deliverables">
+                  <span class="deliv-item">Web Design</span>
+                  <span class="deliv-item">Appointment Experience</span>
+                  <span class="deliv-item">Interactive UI</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://aura-xi-self.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary magnetic-target" id="btnLiveAura">
+                    <span>VIEW LIVE WEBSITE</span>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <button class="btn btn-outline preview-modal-trigger" data-target-project="aura"
+                    data-url="https://aura-xi-self.vercel.app/">
+                    <span>EXPAND PREVIEW</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-viewport-wrapper">
+                <div class="browser-window tilt-target">
+                  <div class="browser-chrome">
+                    <div class="window-dots">
+                      <span class="dot red"></span>
+                      <span class="dot yellow"></span>
+                      <span class="dot green"></span>
+                    </div>
+                    <div class="browser-address-bar">
+                      <span class="browser-url">https://aura-xi-self.vercel.app/</span>
+                    </div>
+                    <div class="browser-actions">
+                      <span class="action-icon">⟳</span>
+                    </div>
+                  </div>
+                  <div class="browser-body">
+                    <img src="assets/images/aura.jpg" alt="AURA Quiet Luxury Beauty Studio Website Preview"
+                      class="project-image" loading="lazy">
+                    <div class="browser-hover-overlay">
+                      <a href="https://aura-xi-self.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="overlay-cta">
+                        <span>LAUNCH DEMO ↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 03: ÉLAN HOUSE -->
+          <article class="project-showcase" id="project-elan" data-project="elan"
+            data-services="web-design web-development booking-experiences">
+            <div class="project-inner">
+              <div class="project-info">
+                <div class="project-tag-wrap">
+                  <span class="project-index">03 / 05</span>
+                  <span class="project-category">HOTEL / HOSPITALITY</span>
+                </div>
+
+                <h3 class="project-name">ÉLAN HOUSE</h3>
+                <p class="project-tagline">Boutique Luxury Hotel & Suites</p>
+
+                <p class="project-description">
+                  Evoking English heritage estates and romantic hearth-lit suites. Built with an intuitive date-picker,
+                  suite tour gallery, amenity breakdown, and frictionless stay reservation interface.
+                </p>
+
+                <div class="project-deliverables">
+                  <span class="deliv-item">Luxury Web Design</span>
+                  <span class="deliv-item">Hotel Experience</span>
+                  <span class="deliv-item">Booking Interface</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://elanhouse-kappa.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary magnetic-target" id="btnLiveElan">
+                    <span>VIEW LIVE WEBSITE</span>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <button class="btn btn-outline preview-modal-trigger" data-target-project="elan"
+                    data-url="https://elanhouse-kappa.vercel.app/">
+                    <span>EXPAND PREVIEW</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-viewport-wrapper">
+                <div class="browser-window tilt-target">
+                  <div class="browser-chrome">
+                    <div class="window-dots">
+                      <span class="dot red"></span>
+                      <span class="dot yellow"></span>
+                      <span class="dot green"></span>
+                    </div>
+                    <div class="browser-address-bar">
+                      <span class="browser-url">https://elanhouse-kappa.vercel.app/</span>
+                    </div>
+                    <div class="browser-actions">
+                      <span class="action-icon">⟳</span>
+                    </div>
+                  </div>
+                  <div class="browser-body">
+                    <img src="assets/images/elan.jpg" alt="ÉLAN HOUSE Boutique Luxury Hotel Website Preview"
+                      class="project-image" loading="lazy">
+                    <div class="browser-hover-overlay">
+                      <a href="https://elanhouse-kappa.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="overlay-cta">
+                        <span>LAUNCH DEMO ↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 04: BURGR -->
+          <article class="project-showcase" id="project-burgr" data-project="burgr"
+            data-services="web-design restaurant-ordering responsive-mobile-design">
+            <div class="project-inner reverse">
+              <div class="project-info">
+                <div class="project-tag-wrap">
+                  <span class="project-index">04 / 05</span>
+                  <span class="project-category">RESTAURANT / ORDERING</span>
+                </div>
+
+                <h3 class="project-name">BURGR</h3>
+                <p class="project-tagline">Modern Smash Burger Restaurant</p>
+
+                <p class="project-description">
+                  High-voltage culinary presentation featuring sizzling typography, rich macro photography, instant
+                  ingredient customization, and a sleek flyout checkout cart built for zero cart abandonment.
+                </p>
+
+                <div class="project-deliverables">
+                  <span class="deliv-item">Restaurant Website</span>
+                  <span class="deliv-item">Digital Menu</span>
+                  <span class="deliv-item">Online Ordering Experience</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://burgr-cyan.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary magnetic-target" id="btnLiveBurgr">
+                    <span>VIEW LIVE WEBSITE</span>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <button class="btn btn-outline preview-modal-trigger" data-target-project="burgr"
+                    data-url="https://burgr-cyan.vercel.app/">
+                    <span>EXPAND PREVIEW</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-viewport-wrapper">
+                <div class="browser-window tilt-target">
+                  <div class="browser-chrome">
+                    <div class="window-dots">
+                      <span class="dot red"></span>
+                      <span class="dot yellow"></span>
+                      <span class="dot green"></span>
+                    </div>
+                    <div class="browser-address-bar">
+                      <span class="browser-url">https://burgr-cyan.vercel.app/</span>
+                    </div>
+                    <div class="browser-actions">
+                      <span class="action-icon">⟳</span>
+                    </div>
+                  </div>
+                  <div class="browser-body">
+                    <img src="assets/images/burgr.jpg" alt="BURGR Modern Smash Burger Restaurant Website Preview"
+                      class="project-image" loading="lazy">
+                    <div class="browser-hover-overlay">
+                      <a href="https://burgr-cyan.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="overlay-cta">
+                        <span>LAUNCH DEMO ↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 05: NOIR -->
+          <article class="project-showcase" id="project-noir" data-project="noir"
+            data-services="web-design restaurant-ordering brand-digital-experience">
+            <div class="project-inner">
+              <div class="project-info">
+                <div class="project-tag-wrap">
+                  <span class="project-index">05 / 05</span>
+                  <span class="project-category">FINE DINING / GASTRONOMY</span>
+                </div>
+
+                <h3 class="project-name">NOIR</h3>
+                <p class="project-tagline">Contemporary Fine Dining & Sommelier</p>
+
+                <p class="project-description">
+                  A theatrical celebration of culinary artistry. Dark obsidian surfaces, gold-leaf accents, an
+                  interactive multi-course tasting menu browser, and an intimate table reservation portal.
+                </p>
+
+                <div class="project-deliverables">
+                  <span class="deliv-item">Luxury Web Design</span>
+                  <span class="deliv-item">Restaurant Experience</span>
+                  <span class="deliv-item">Reservation Interface</span>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://noir-xi-five.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary magnetic-target" id="btnLiveNoir">
+                    <span>VIEW LIVE WEBSITE</span>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <button class="btn btn-outline preview-modal-trigger" data-target-project="noir"
+                    data-url="https://noir-xi-five.vercel.app/">
+                    <span>EXPAND PREVIEW</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-viewport-wrapper">
+                <div class="browser-window tilt-target">
+                  <div class="browser-chrome">
+                    <div class="window-dots">
+                      <span class="dot red"></span>
+                      <span class="dot yellow"></span>
+                      <span class="dot green"></span>
+                    </div>
+                    <div class="browser-address-bar">
+                      <span class="browser-url">https://noir-xi-five.vercel.app/</span>
+                    </div>
+                    <div class="browser-actions">
+                      <span class="action-icon">⟳</span>
+                    </div>
+                  </div>
+                  <div class="browser-body">
+                    <img src="assets/images/noir.jpg" alt="NOIR Contemporary Fine Dining Website Preview"
+                      class="project-image" loading="lazy">
+                    <div class="browser-hover-overlay">
+                      <a href="https://noir-xi-five.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="overlay-cta">
+                        <span>LAUNCH DEMO ↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES SECTION -->
+    <section class="section industries-section" id="industries">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-label">
+            <span class="label-idx">04</span>
+            <span class="label-text">VERTICAL SPECIALIZATION</span>
+          </div>
+          <h2 class="section-title">
+            BUILT FOR<br>
+            BUSINESSES<br>
+            THAT CARE<span class="lime-period">.</span>
+          </h2>
+          <p class="section-subtitle">
+            We don't build generic websites. We build category leaders engineered around how customers in each industry
+            choose and purchase.
+          </p>
+        </div>
+
+        <div class="industries-grid">
+          <!-- Category 1: BARBERSHOPS -->
+          <div class="industry-card reveal-card" data-industry="barbershop">
+            <div class="card-glow"></div>
+            <div class="industry-header">
+              <span class="ind-badge">EXPERIENCE 01</span>
+              <span class="ind-icon">✂</span>
+            </div>
+            <h3 class="industry-title">BARBERSHOPS</h3>
+            <p class="industry-lead">
+              Turn walk-in traffic into booked appointments with a premium digital experience.
+            </p>
+            <ul class="industry-perks">
+              <li>Integrated multi-staff chair calendars</li>
+              <li>Signature cut & beard grooming portfolios</li>
+              <li>SMS booking reminders & pre-payment</li>
+            </ul>
+            <div class="industry-cta-row">
+              <a href="https://luxecut.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-ind-card">
+                <span>EXPLORE BARBERSHOP WEBSITES</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Category 2: SALONS -->
+          <div class="industry-card reveal-card" data-industry="salon">
+            <div class="card-glow"></div>
+            <div class="industry-header">
+              <span class="ind-badge">EXPERIENCE 02</span>
+              <span class="ind-icon">✧</span>
+            </div>
+            <h3 class="industry-title">SALONS & SPAS</h3>
+            <p class="industry-lead">
+              Transform high-ticket aesthetic consultations into fully scheduled diaries effortlessly.
+            </p>
+            <ul class="industry-perks">
+              <li>Editorial lookbooks & treatment pricing guides</li>
+              <li>Bespoke stylist bios & portfolio galleries</li>
+              <li>Quiet luxury atmosphere with calm UI flows</li>
+            </ul>
+            <div class="industry-cta-row">
+              <a href="https://aura-xi-self.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="btn btn-ind-card">
+                <span>EXPLORE SALON WEBSITES</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Category 3: HOTELS -->
+          <div class="industry-card reveal-card" data-industry="hotel">
+            <div class="card-glow"></div>
+            <div class="industry-header">
+              <span class="ind-badge">EXPERIENCE 03</span>
+              <span class="ind-icon">⚲</span>
+            </div>
+            <h3 class="industry-title">HOTELS & SUITES</h3>
+            <p class="industry-lead">
+              Bypass high OTA commissions with direct guest bookings and rich room storytelling.
+            </p>
+            <ul class="industry-perks">
+              <li>Immersive 360° architectural suite tours</li>
+              <li>Real-time room availability & seasonal rates</li>
+              <li>Upsell concierge amenities, dining & spa packages</li>
+            </ul>
+            <div class="industry-cta-row">
+              <a href="https://elanhouse-kappa.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="btn btn-ind-card">
+                <span>EXPLORE HOTEL WEBSITES</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Category 4: RESTAURANTS -->
+          <div class="industry-card reveal-card" data-industry="restaurant">
+            <div class="card-glow"></div>
+            <div class="industry-header">
+              <span class="ind-badge">EXPERIENCE 04</span>
+              <span class="ind-icon">✦</span>
+            </div>
+            <h3 class="industry-title">RESTAURANTS</h3>
+            <p class="industry-lead">
+              Drive table reservations and direct takeaway ordering with mouthwatering visual interfaces.
+            </p>
+            <ul class="industry-perks">
+              <li>Sensory tasting menus with dietary filters</li>
+              <li>Seamless zero-fee direct ordering cart</li>
+              <li>VIP dining & private event inquiry funnels</li>
+            </ul>
+            <div class="industry-cta-row">
+              <a href="https://noir-xi-five.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="btn btn-ind-card">
+                <span>EXPLORE RESTAURANT WEBSITES</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US SECTION -->
+    <section class="section why-section" id="why">
+      <div class="container">
+        <div class="why-layout">
+          <div class="why-left reveal-on-scroll">
+            <div class="section-label">
+              <span class="label-idx">05</span>
+              <span class="label-text">WHY NEXORA</span>
+            </div>
+            <h2 class="why-headline">
+              YOUR WEBSITE<br>
+              IS OFTEN THE<br>
+              <span class="lime-text">FIRST IMPRESSION.</span>
+            </h2>
+            <p class="why-body">
+              Before a customer visits your store, books an appointment or makes a reservation, they often see your
+              website first.
+            </p>
+            <p class="why-body-sub">
+              We design that first impression to feel premium, trustworthy and memorable — turning casual phone
+              scrollers into loyal, repeat customers.
+            </p>
+          </div>
+
+          <div class="why-right">
+            <!-- Principle 01 -->
+            <div class="principle-card reveal-card">
+              <div class="principle-number">01</div>
+              <div class="principle-content">
+                <h3 class="principle-title">LOOK PREMIUM</h3>
+                <p class="principle-desc">
+                  Substandard typography and generic templates instantly devalue your craft. We engineer bespoke,
+                  world-class aesthetic authority so you can charge premium prices with pride.
+                </p>
+              </div>
+            </div>
+
+            <!-- Principle 02 -->
+            <div class="principle-card reveal-card">
+              <div class="principle-number">02</div>
+              <div class="principle-content">
+                <h3 class="principle-title">WORK FAST</h3>
+                <p class="principle-desc">
+                  Every half-second delay costs 20% in booking drop-offs. Our code is engineered for zero bloat,
+                  sub-second loads, and silky smooth 60fps responsiveness on every device.
+                </p>
+              </div>
+            </div>
+
+            <!-- Principle 03 -->
+            <div class="principle-card reveal-card">
+              <div class="principle-number">03</div>
+              <div class="principle-content">
+                <h3 class="principle-title">CONVERT BETTER</h3>
+                <p class="principle-desc">
+                  A beautiful website without conversion architecture is just art. We design high-converting reservation
+                  hooks, thumb-friendly tap targets, and frictionless booking flows.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="section process-section" id="process">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="section-label">
+            <span class="label-idx">06</span>
+            <span class="label-text">THE TIMELINE</span>
+          </div>
+          <h2 class="section-title">FROM IDEA TO LAUNCH<span class="lime-period">.</span></h2>
+          <p class="section-subtitle">A transparent, collaborative five-stage methodology built for zero surprises and
+            rapid delivery.</p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-progress-track">
+            <div class="timeline-progress-bar" id="timelineBar"></div>
+          </div>
+
+          <div class="timeline-steps">
+            <!-- Step 01 -->
+            <div class="timeline-step reveal-step" data-step="1">
+              <div class="step-marker">
+                <span class="step-num">01</span>
+                <span class="step-dot"></span>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">DISCOVER</h3>
+                <p class="step-desc">Understand the business, audience, competitive landscape, and primary conversion
+                  goals.</p>
+                <span class="step-duration">Week 01</span>
+              </div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="timeline-step reveal-step" data-step="2">
+              <div class="step-marker">
+                <span class="step-num">02</span>
+                <span class="step-dot"></span>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">DESIGN</h3>
+                <p class="step-desc">Create the bespoke visual direction, editorial typography, 3D accents, and user
+                  journey.</p>
+                <span class="step-duration">Week 02</span>
+              </div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="timeline-step reveal-step" data-step="3">
+              <div class="step-marker">
+                <span class="step-num">03</span>
+                <span class="step-dot"></span>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">BUILD</h3>
+                <p class="step-desc">Develop a responsive, high-performance website with modern WebGL effects and clean
+                  code.</p>
+                <span class="step-duration">Week 03</span>
+              </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="timeline-step reveal-step" data-step="4">
+              <div class="step-marker">
+                <span class="step-num">04</span>
+                <span class="step-dot"></span>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">REFINE</h3>
+                <p class="step-desc">Test across devices, audit speed and accessibility, and polish every
+                  micro-interaction.</p>
+                <span class="step-duration">Week 04</span>
+              </div>
+            </div>
+
+            <!-- Step 05 -->
+            <div class="timeline-step reveal-step" data-step="5">
+              <div class="step-marker">
+                <span class="step-num">05</span>
+                <span class="step-dot"></span>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">LAUNCH</h3>
+                <p class="step-desc">Ship the final experience live to production, configure analytics, and train your
+                  staff.</p>
+                <span class="step-duration">Launch Day</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content reveal-on-scroll">
+            <div class="section-label">
+              <span class="label-idx">07</span>
+              <span class="label-text">STUDIO ETHOS</span>
+            </div>
+            <h2 class="about-headline">
+              SMALL TEAM.<br>
+              BIG DIGITAL<br>
+              <span class="lime-text">EXPERIENCES.</span>
+            </h2>
+            <p class="about-lead">
+              We combine strategy, design and technology to create websites that help ambitious businesses stand out in
+              a crowded digital world.
+            </p>
+            <p class="about-desc">
+              Founded on the belief that local businesses deserve world-class digital craftsmanship, we operate with
+              zero bloated layers. You collaborate directly with master designers and creative engineers dedicated to
+              moving the needle for your revenue.
+            </p>
+
+            <div class="about-pillars">
+              <div class="pillar-item">
+                <span class="pillar-idx">01</span>
+                <span class="pillar-name">DESIGN</span>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-idx">02</span>
+                <span class="pillar-name">DEVELOPMENT</span>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-idx">03</span>
+                <span class="pillar-name">STRATEGY</span>
+              </div>
+              <div class="pillar-item">
+                <span class="pillar-idx">04</span>
+                <span class="pillar-name">EXPERIENCE</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual reveal-on-scroll">
+            <div class="about-canvas-card">
+              <canvas id="aboutCanvas"></canvas>
+              <div class="card-caption">
+                <span class="caption-tag">PHILOSOPHY</span>
+                <p class="caption-text">"Where rigorous architectural precision meets modern digital emotion."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRAMATIC CTA SECTION -->
+    <section class="section cta-section" id="cta">
+      <div class="cta-canvas-wrap">
+        <canvas id="ctaCanvas"></canvas>
+      </div>
+      <div class="container cta-container">
+        <div class="cta-content reveal-on-scroll">
+          <div class="cta-badge">
+            <span class="live-pulse"></span>
+            <span>LET'S CRAFT SOMETHING REMARKABLE</span>
+          </div>
+
+          <h2 class="cta-headline">
+            YOUR BUSINESS<br>
+            DESERVES A BETTER<br>
+            <span class="highlight-underline">WEBSITE<span class="lime-period">.</span></span>
+          </h2>
+
+          <p class="cta-sub">
+            Let's build something your customers remember.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary btn-lg magnetic-target">
+              <span>START A PROJECT</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a href="#work" class="btn btn-secondary btn-lg magnetic-target">
+              <span>VIEW OUR WORK</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 2V14M8 14L2 8M8 14L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-left reveal-on-scroll">
+            <div class="section-label">
+              <span class="label-idx">08</span>
+              <span class="label-text">INQUIRIES</span>
+            </div>
+            <h2 class="contact-title">
+              LET'S BUILD<br>
+              SOMETHING<br>
+              <span class="lime-text">GREAT<span class="lime-period">.</span></span>
+            </h2>
+            <p class="contact-intro">
+              Have a project in mind, an upcoming launch, or an existing website that no longer represents your
+              standards? Tell us about your vision.
+            </p>
+
+            <div class="direct-contacts">
+              <div class="contact-detail">
+                <span class="detail-label">DIRECT INQUIRIES</span>
+                <a href="mailto:nexora.web.net@gmail.com" class="detail-val hover-link">nexora.web.net@gmail.com</a>
+              </div>
+              <div class="contact-detail">
+                <span class="detail-label">STUDIO HEADQUARTERS</span>
+                <span class="detail-val">Berlin & Remote Global</span>
+              </div>
+              <div class="contact-detail">
+                <span class="detail-label">TYPICAL RESPONSE TIME</span>
+                <span class="detail-val">Within 24 Business Hours</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-right reveal-on-scroll">
+            <form class="inquiry-form" id="inquiryForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="clientName">YOUR NAME *</label>
+                  <input type="text" id="clientName" name="name" placeholder="e.g. Julian Thorne" required>
+                  <span class="form-error">Please enter your name</span>
+                </div>
+                <div class="form-group">
+                  <label for="businessName">BUSINESS NAME *</label>
+                  <input type="text" id="businessName" name="business" placeholder="e.g. Maison Atelier" required>
+                  <span class="form-error">Please enter your business name</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="clientEmail">EMAIL ADDRESS *</label>
+                  <input type="email" id="clientEmail" name="email" placeholder="julian@example.com" required>
+                  <span class="form-error">Please enter a valid email address</span>
+                </div>
+                <div class="form-group">
+                  <label for="businessType">BUSINESS TYPE *</label>
+                  <select id="businessType" name="type" required>
+                    <option value="" disabled selected>Select Industry</option>
+                    <option value="Barbershop">Barbershop</option>
+                    <option value="Salon">Salon / Spa</option>
+                    <option value="Hotel">Hotel / Hospitality</option>
+                    <option value="Restaurant">Restaurant / Dining</option>
+                    <option value="Other">Other Ambitious Brand</option>
+                  </select>
+                  <span class="form-error">Please choose an industry</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>WHAT DO YOU NEED?</label>
+                <div class="pill-checkboxes">
+                  <label class="pill-check">
+                    <input type="checkbox" name="services" value="Full Website Redesign" checked>
+                    <span>Full Website Redesign</span>
+                  </label>
+                  <label class="pill-check">
+                    <input type="checkbox" name="services" value="Booking & Reservation System">
+                    <span>Booking & Reservation</span>
+                  </label>
+                  <label class="pill-check">
+                    <input type="checkbox" name="services" value="Online Ordering System">
+                    <span>Online Ordering</span>
+                  </label>
+                  <label class="pill-check">
+                    <input type="checkbox" name="services" value="3D & WebGL Visuals">
+                    <span>3D & WebGL Visuals</span>
+                  </label>
+                  <label class="pill-check">
+                    <input type="checkbox" name="services" value="Brand Identity">
+                    <span>Brand Identity</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="budgetRange">APPROXIMATE BUDGET RANGE</label>
+                <select id="budgetRange" name="budget">
+                  <option value="$100 - $500">$100 — $500</option>
+                  <option value="$500 - $1000">$500 — $1000</option>
+                  <option value="$1000 - $3000">$1000 — $3000</option>
+                  <option value="$3,000 - $5,000">$3,000 — $5,000</option>
+                  <option value="$5,000 - $10,000" selected>$5,000 — $10,000</option>
+                  <option value="$10,000 - $25,000">$10,000 — $25,000</option>
+                  <option value="$25,000+">$25,000+ (Enterprise / Multi-location)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="projectMessage">TELL US ABOUT YOUR PROJECT *</label>
+                <textarea id="projectMessage" name="message" rows="4"
+                  placeholder="Briefly describe your goals, current site (if any), timeline, or questions..."
+                  required></textarea>
+                <span class="form-error">Please provide a brief message</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit magnetic-target" id="btnSubmitForm">
+                <span>START THE CONVERSATION →</span>
+              </button>
+
+              <div class="form-feedback" id="formFeedback"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MINIMAL PREMIUM FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo-link" aria-label="NEXORA Home">
+            <img src="assets/images/nexora-logo.jpg" alt="NEXORA Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-tagline">DIGITAL EXPERIENCES FOR AMBITIOUS BUSINESSES.</p>
+          <p class="footer-subtext">We build websites people remember. Tailored engineering for hospitality, grooming,
+            beauty, and luxury commerce.</p>
+        </div>
+
+        <div class="footer-cols">
+          <div class="footer-col">
+            <span class="col-title">NAVIGATION</span>
+            <a href="#hero">Home</a>
+            <a href="#work">Selected Work</a>
+            <a href="#services">Services</a>
+            <a href="#industries">Industries</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <div class="footer-col">
+            <span class="col-title">FEATURED WORK</span>
+            <a href="https://luxecut.vercel.app/" target="_blank" rel="noopener">LUXECUT ↗</a>
+            <a href="https://aura-xi-self.vercel.app/" target="_blank" rel="noopener">AURA ↗</a>
+            <a href="https://elanhouse-kappa.vercel.app/" target="_blank" rel="noopener">ÉLAN HOUSE ↗</a>
+            <a href="https://burgr-cyan.vercel.app/" target="_blank" rel="noopener">BURGR ↗</a>
+            <a href="https://noir-xi-five.vercel.app/" target="_blank" rel="noopener">NOIR ↗</a>
+          </div>
+
+          <div class="footer-col">
+            <span class="col-title">CONNECT</span>
+            <a href="https://www.instagram.com/nexora_team_dev/" target="_blank" rel="noopener">Instagram ↗</a>
+            <a href="https://www.facebook.com/nexora.web.net" target="_blank" rel="noopener">Facebook ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 NEXORA. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#hero">Terms of Service</a>
+          <span class="dot-sep">•</span>
+          <a href="#hero">Privacy Policy</a>
+          <span class="dot-sep">•</span>
+          <a href="#hero">Back to Top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Project Preview Modal -->
+  <div class="preview-modal" id="previewModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-project-badge" id="modalBadge">PROJECT DEMO</span>
+          <span class="modal-project-name" id="modalProjectName">LUXECUT</span>
+        </div>
+        <div class="modal-actions">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" id="modalDirectLink">
+            <span>OPEN IN NEW TAB ↗</span>
+          </a>
+          <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">✕</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-preview-loading" id="modalLoading">
+          <div class="loader-spinner"></div>
+          <span>Loading project experience...</span>
+        </div>
+        <img id="modalPreviewImage" src="" alt="Project Preview Screenshot" class="modal-preview-img">
+        <iframe id="modalPreviewIframe" src="" title="Live Project Frame" class="modal-preview-frame"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Authentication Modal -->
+  <div class="preview-modal admin-auth-modal" id="adminAuthModal" aria-hidden="true">
+    <div class="modal-backdrop" id="adminAuthBackdrop"></div>
+    <div class="modal-window admin-auth-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-project-badge">SECURITY</span>
+          <h3 class="modal-title-heading">ADMIN ACCESS UNLOCK</h3>
+        </div>
+        <button class="modal-close" id="adminAuthCloseBtn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body admin-auth-body">
+        <div class="auth-icon-wrap">
+          <span class="auth-shield-emoji">🛡️</span>
+        </div>
+        <p class="auth-instruction">Enter the admin passcode to access the publishing dashboard and post new websites to
+          the showcase.</p>
+        <form id="adminAuthForm" class="admin-auth-form">
+          <div class="form-group">
+            <label for="adminPasscode">ADMIN PASSCODE *</label>
+            <input type="password" id="adminPasscode" placeholder="Enter Passcode (Default: 1234)" required
+              autocomplete="current-password">
+            <span class="auth-error-msg" id="authErrorMsg">Incorrect passcode. Try passcode: 1234</span>
+          </div>
+          <div class="auth-buttons-row">
+            <button type="button" class="btn btn-secondary" id="demoQuickAdminBtn">QUICK DEMO</button>
+            <button type="submit" class="btn btn-primary" id="submitAdminAuth"><span>CONTINUE TO POSTING
+                →</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manually Add New Website Showcase Modal -->
+  <div class="preview-modal add-project-modal" id="addProjectModal" aria-hidden="true">
+    <div class="modal-backdrop" id="addModalBackdrop"></div>
+    <div class="modal-window add-modal-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-project-badge">PORTFOLIO MANAGEMENT</span>
+          <h3 class="modal-title-heading">ADD NEW SHOWCASE WEBSITE</h3>
+        </div>
+        <button class="modal-close" id="addModalCloseBtn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body add-modal-body">
+        <form id="addProjectForm" class="add-project-form">
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label for="newProjName">WEBSITE / BRAND NAME *</label>
+              <input type="text" id="newProjName" placeholder="e.g. VELOX MOTORS" required>
+            </div>
+            <div class="form-group">
+              <label for="newProjCategory">BUSINESS INDUSTRY / CATEGORY *</label>
+              <input type="text" id="newProjCategory" placeholder="e.g. LUXURY AUTOMOTIVE / RENTAL" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="newProjTagline">TAGLINE / SUBTITLE *</label>
+            <input type="text" id="newProjTagline" placeholder="e.g. Next-Gen Electric Mobility Showcase Experience"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="newProjUrl">LIVE WEBSITE URL *</label>
+            <input type="url" id="newProjUrl" placeholder="https://example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="newProjDesc">PROJECT OVERVIEW & HIGHLIGHTS *</label>
+            <textarea id="newProjDesc" rows="3"
+              placeholder="Describe the design concept, visual craft, key interactive features, or conversion results..."
+              required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-bold">ASSOCIATED SERVICES & DISCIPLINES (SELECT ALL THAT APPLY) *</label>
+            <div class="services-checkbox-grid">
+              <label class="checkbox-pill">
+                <input type="checkbox" name="services" value="web-design" checked>
+                <span class="pill-box">✓ Web Design</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" name="services" value="web-development" checked>
+                <span class="pill-box">✓ Web Development</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" name="services" value="booking-experiences">
+                <span class="pill-box">✓ Booking Experiences</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" name="services" value="restaurant-ordering">
+                <span class="pill-box">✓ Restaurant Ordering</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" name="services" value="brand-digital-experience">
+                <span class="pill-box">✓ Brand & Digital</span>
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" name="services" value="responsive-mobile-design">
+                <span class="pill-box">✓ Mobile Design</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label for="newProjDeliverables">DELIVERABLES (COMMA SEPARATED)</label>
+              <input type="text" id="newProjDeliverables" placeholder="e.g. Web Design, WebGL Canvas, Booking System">
+            </div>
+            <div class="form-group">
+              <label for="newProjImg">PREVIEW IMAGE URL (OPTIONAL)</label>
+              <input type="url" id="newProjImg" placeholder="Leave blank for automatic glassmorphism gradient frame">
+            </div>
+          </div>
+
+          <div class="modal-form-footer">
+            <button type="button" class="btn btn-secondary" id="cancelAddProject">CANCEL</button>
+            <button type="submit" class="btn btn-primary" id="submitAddProject">
+              <span>+ PUBLISH SHOWCASE WEBSITE</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Toast Notification -->
+  <div class="toast-notification" id="toastNotification" aria-live="polite">
+    <div class="toast-icon">✦</div>
+    <div class="toast-message" id="toastMessage">Website successfully added!</div>
+  </div>
+
+  <!-- External Three.js Library via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Main Application Script -->
+  <script src="main.js"></script>
+</body>
+
+</html>
