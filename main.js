@@ -469,7 +469,7 @@ function initAdminSystem() {
     authForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const code = authPasscode.value.trim();
-      if (code === '1234' || code.toLowerCase() === 'admin') {
+      if (code === 'nexoraadmin1234' || code.toLowerCase() === 'nexoraadmin1234') {
         isAdminAuthenticated = true;
         localStorage.setItem('nexora_admin_authed', 'true');
         closeAuthModal();
